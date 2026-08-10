@@ -39,6 +39,11 @@
       position: fixed; z-index: 20; inset: 0 auto auto 0; width: 0; height: 4px;
       background: linear-gradient(90deg, var(--gold), var(--rust));
     }
+    .series-home {
+      position: absolute; z-index: 3; top: 24px; left: max(18px, calc((100% - 1120px) / 2));
+      color: rgba(255,250,240,.82); font-size: 13px; text-decoration: none;
+    }
+    .series-home:hover { color: #fffaf0; }
     .hero {
       min-height: 92vh; display: grid; place-items: end center; position: relative;
       overflow: hidden; color: #fffaf0; background: var(--night);
@@ -244,6 +249,7 @@
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
+  <a class="series-home" href="index.html">← 返回20篇目录</a>
 
   <header class="hero">
     <div class="hero-inner">

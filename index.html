@@ -2,28 +2,124 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=day01-israel-palestine-origins.html">
-  <title>世界历史夜谈</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="世界历史夜谈：给初中生和家长共同阅读的20篇国际历史故事。">
+  <title>世界历史夜谈｜20个晚上，看懂世界怎样走到今天</title>
   <style>
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      color: #20231f;
-      background: #f3ead8;
-      font-family: "Songti SC", STSong, Georgia, serif;
+    :root {
+      --paper:#f3ead8; --light:#fbf7ed; --ink:#20231f; --soft:#666257;
+      --night:#17252d; --rust:#9b3f2f; --olive:#52634c; --gold:#c39a52;
+      --line:rgba(32,35,31,.17); --shadow:0 18px 55px rgba(25,30,27,.14);
     }
-    main { max-width: 34rem; padding: 2rem; text-align: center; }
-    a { color: #9b3f2f; text-underline-offset: .2em; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0;color:var(--ink);
+      font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",STSong,Georgia,serif;
+      background:
+        radial-gradient(circle at 8% 5%,rgba(195,154,82,.2),transparent 28rem),
+        radial-gradient(circle at 91% 20%,rgba(82,99,76,.13),transparent 32rem),
+        repeating-linear-gradient(0deg,rgba(55,45,28,.018) 0 1px,transparent 1px 4px),
+        var(--paper);
+    }
+    a{color:inherit}.masthead{
+      min-height:78vh;position:relative;display:grid;place-items:end center;overflow:hidden;color:#fffaf0;
+      background:linear-gradient(125deg,#13232c,#243c45 56%,#3d493d)
+    }
+    .masthead::before{
+      content:"";position:absolute;inset:0;opacity:.18;
+      background-image:url("day01-01-jerusalem-1917.png");background-size:cover;background-position:center
+    }
+    .masthead::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 10%,rgba(10,18,22,.86) 94%)
+    }
+    .hero{position:relative;z-index:2;width:min(1180px,calc(100% - 36px));padding:14vh 0 8vh}
+    .eyebrow{color:#e7c88d;font:800 12px/1.4 ui-monospace,monospace;letter-spacing:.18em}
+    h1{max-width:1050px;margin:14px 0 0;font-size:clamp(46px,8vw,100px);line-height:1.02;letter-spacing:-.055em}
+    .intro{max-width:760px;margin:27px 0 0;color:rgba(255,250,240,.84);font-size:clamp(18px,2vw,23px);line-height:1.75}
+    .stats{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:35px;padding-top:17px;border-top:1px solid rgba(255,255,255,.22);color:rgba(255,250,240,.66);font-size:13px}
+    .wrap{width:min(1180px,calc(100% - 34px));margin:0 auto;padding:90px 0 130px}
+    .routes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-bottom:95px;border:1px solid var(--line);background:var(--line);box-shadow:var(--shadow)}
+    .route{padding:27px;background:rgba(251,247,237,.88)}
+    .route b{display:block;margin-bottom:8px;color:var(--rust);font:800 11px/1.4 ui-monospace,monospace;letter-spacing:.12em}
+    .route h2{margin:0 0 10px;font-size:21px;line-height:1.3}
+    .route p{margin:0;color:var(--soft);font-size:14px;line-height:1.72}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:32px}
+    .section-head h2{margin:0;font-size:clamp(31px,4.5vw,53px);line-height:1.1;letter-spacing:-.04em}
+    .section-head p{max-width:470px;margin:0;color:var(--soft);font-size:14px;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+    .card{
+      display:grid;grid-template-columns:42% 1fr;min-height:250px;overflow:hidden;
+      border:1px solid var(--line);background:rgba(251,247,237,.82);box-shadow:0 10px 35px rgba(25,30,27,.08);
+      text-decoration:none;transition:transform .24s ease,box-shadow .24s ease
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(25,30,27,.16)}
+    .card img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(.96)}
+    .copy{display:flex;flex-direction:column;padding:24px 23px}
+    .day{color:var(--rust);font:800 11px/1.4 ui-monospace,monospace;letter-spacing:.13em}
+    .card h3{margin:10px 0 11px;font-size:23px;line-height:1.25;letter-spacing:-.02em}
+    .card p{margin:0;color:var(--soft);font-size:14px;line-height:1.72}
+    .read{margin-top:auto;padding-top:18px;color:var(--olive);font-size:13px}
+    .method{margin-top:95px;padding:48px;color:#f8f0df;background:var(--night);box-shadow:var(--shadow)}
+    .method h2{margin:0 0 18px;font-size:34px}.method p{max-width:850px;color:rgba(255,250,240,.78);font-size:16px;line-height:1.85}
+    footer{padding:30px;text-align:center;color:var(--soft);font-size:13px}
+    @media(max-width:920px){.routes{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}
+    @media(max-width:580px){
+      .masthead{min-height:72vh}.wrap{padding-top:60px}.routes{grid-template-columns:1fr}
+      .section-head{display:block}.section-head p{margin-top:14px}.grid{gap:19px}
+      .card{display:block}.card img{height:210px}.copy{min-height:245px}.method{margin-inline:-17px;padding:36px 22px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
   </style>
 </head>
 <body>
-  <main>
-    <h1>世界历史夜谈</h1>
-    <p>正在进入第一篇：一片土地，两种归乡。</p>
-    <p><a href="day01-israel-palestine-origins.html">如果页面没有自动跳转，请点击这里</a></p>
+  <header class="masthead">
+    <div class="hero">
+      <div class="eyebrow">给少年人的国际历史故事 · 第一季</div>
+      <h1>20个晚上，<br>看懂世界怎样走到今天</h1>
+      <p class="intro">不背结论，也不把国家分成好人和坏人。我们从一个家庭、一条街、一封信和一张地图出发，看见帝国如何退场，国家如何形成，战争如何升级，规则又怎样艰难地约束力量。</p>
+      <div class="stats"><span>20篇独立长文</span><span>适合初一以上亲子共读</span><span>每晚约45—75分钟</span><span>历史场景配图由GPT Image 2生成</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="routes" aria-label="四条阅读路线">
+      <div class="route"><b>路线 A</b><h2>国家从哪里来</h2><p>第1、2、6、9篇：边界、分裂、统一与民族记忆。</p></div>
+      <div class="route"><b>路线 B</b><h2>战争怎样失控</h2><p>第4、8、12、18、19篇：误判、航道、威慑与升级。</p></div>
+      <div class="route"><b>路线 C</b><h2>规则能做什么</h2><p>第5、7、10、11、14、17篇：主权、联盟、贸易与公平。</p></div>
+      <div class="route"><b>路线 D</b><h2>看不见的权力</h2><p>第3、13、15、16、20篇：能源、芯片、信息与观察方法。</p></div>
+    </section>
+
+    <div class="section-head">
+      <h2>第一季 · 二十夜</h2>
+      <p>建议按顺序阅读。每篇都有右侧边注、史料来源和父子讨论题；手机端边注会自动进入正文。</p>
+    </div>
+
+    <section class="grid">
+      <a class="card" href="day01-israel-palestine-origins.html"><img src="images/day01-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 01</span><h3>一片土地，两种归乡</h3><p>以色列与巴勒斯坦：两个真实的归属感，怎样撞在同一片土地上。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day02-korea-division.html"><img src="images/day02-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 02</span><h3>一条纬线切开的民族</h3><p>朝鲜与韩国为什么从共同历史走向两个国家、两套制度。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day03-north-korea-development.html"><img src="images/day03-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 03</span><h3>安全国家与普通人的生活</h3><p>朝鲜的发展道路：战争记忆、体制安全、制裁与市场缝隙。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day04-russia-ukraine-war.html"><img src="images/day04-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 04</span><h3>从帝国边疆到全球震荡</h3><p>俄乌战争的历史来路，以及战场为何会抵达世界的粮仓和账单。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day05-singapore-strategy.html"><img src="images/day05-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 05</span><h3>小国如何在大国之间站稳</h3><p>新加坡怎样把港口、规则、国防与外交变成生存空间。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day06-berlin-wall.html"><img src="images/day06-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 06</span><h3>墙倒下以后</h3><p>柏林墙的建立、倒塌，以及德国统一后漫长的经济与心理重建。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day07-european-union.html"><img src="images/day07-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 07</span><h3>把主权交给共同规则</h3><p>欧洲为什么从煤钢合作走向欧盟，又为何不断争论谁来作决定。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day08-cuban-missile-crisis.html"><img src="images/day08-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 08</span><h3>世界最危险的十三天</h3><p>古巴导弹危机：真正拯救世界的，也许是犹豫、沟通与不服从。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day09-india-pakistan-kashmir.html"><img src="images/day09-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 09</span><h3>一次分家留下的伤口</h3><p>英属印度分治、克什米尔归属与印巴两国的安全困境。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day10-brexit.html"><img src="images/day10-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 10</span><h3>拿回主权之后</h3><p>英国脱欧：一句有力量的口号，如何遇到边境、贸易与身份现实。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day11-suez-panama-canals.html"><img src="images/day11-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 11</span><h3>谁控制世界的水门</h3><p>苏伊士与巴拿马运河背后的帝国、主权与全球贸易。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day12-south-china-sea.html"><img src="images/day12-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 12</span><h3>看不见的线与真实航道</h3><p>南海争议中的岛、礁、海洋法、渔民与大国竞争。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day13-middle-east-oil.html"><img src="images/day13-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 13</span><h3>黑色财富改变国家命运</h3><p>中东石油如何创造现代国家，也制造依赖、竞争与转型难题。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day14-hong-kong-singapore.html"><img src="images/day14-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 14</span><h3>两座港城的不同选择</h3><p>香港与新加坡怎样从相似港口条件走向不同制度道路。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day15-chips-digital-sovereignty.html"><img src="images/day15-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 15</span><h3>一粒沙子里的世界权力</h3><p>芯片产业为何成为国家安全、贸易规则与技术主权的核心。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day16-cyber-information-war.html"><img src="images/day16-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 16</span><h3>看不见的战场</h3><p>网络攻击、算法传播与认知战怎样进入每个人的屏幕。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day17-climate-diplomacy.html"><img src="images/day17-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 17</span><h3>谁减排，谁发展，谁付钱</h3><p>气候外交不是一道科学选择题，而是一张历史责任账单。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day18-indian-ocean-red-sea.html"><img src="images/day18-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 18</span><h3>一条航线如何抵达餐桌</h3><p>印度洋、红海和海峡咽喉怎样影响运费、粮食与日常生活。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day19-nuclear-deterrence.html"><img src="images/day19-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 19</span><h3>用最可怕的武器阻止战争</h3><p>核威慑的冷酷逻辑、误判风险，以及裁军为什么如此困难。</p><span class="read">开始阅读 →</span></div></a>
+      <a class="card" href="day20-world-observation-system.html"><img src="images/day20-cover.png" alt="" loading="lazy"><div class="copy"><span class="day">DAY 20</span><h3>给少年人的世界观察工具箱</h3><p>把事件、结构、立场、证据与普通人的生活重新连起来。</p><span class="read">开始阅读 →</span></div></a>
+    </section>
+
+    <section class="method"><h2>这套文章怎样使用</h2><p>先让孩子讲自己已经知道的版本，再一起读故事；遇到右侧边注时，不必全部停下。读完后各自挑一个讨论题，并尝试替自己不赞同的一方说出最强理由。目标不是在20天里记住所有年份，而是养成一种习惯：每当新闻要求你立刻站队，先问事件从哪里来，谁在承担代价，证据是否足够，还有哪一种解释被省略了。</p></section>
   </main>
+  <footer>世界历史夜谈 · 第一季 · 20篇国际历史长文</footer>
 </body>
 </html>
