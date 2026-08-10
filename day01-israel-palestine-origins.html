@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="写给初中生与父母共同阅读的以色列与巴勒斯坦历史故事：从奥斯曼帝国、犹太复国主义、英国托管，到1948、1967与奥斯陆进程。">
+  <title>第1夜｜一片土地，两种归乡：以色列与巴勒斯坦的来路</title>
+  <style>
+    :root {
+      --paper: #f3ead8;
+      --paper-light: #fbf7ed;
+      --ink: #20231f;
+      --ink-soft: #57574f;
+      --night: #17252d;
+      --night-2: #233945;
+      --rust: #9b3f2f;
+      --olive: #52634c;
+      --gold: #c39a52;
+      --line: rgba(32, 35, 31, .18);
+      --shadow: 0 18px 60px rgba(25, 30, 27, .14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 7%, rgba(195,154,82,.16), transparent 24rem),
+        radial-gradient(circle at 90% 28%, rgba(82,99,76,.11), transparent 29rem),
+        repeating-linear-gradient(0deg, rgba(55,45,28,.018) 0, rgba(55,45,28,.018) 1px, transparent 1px, transparent 4px),
+        var(--paper);
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, Georgia, serif;
+      line-height: 1.95;
+    }
+    a { color: var(--rust); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+    a:hover { color: #702a20; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .progress {
+      position: fixed; z-index: 20; inset: 0 auto auto 0; width: 0; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--rust));
+    }
+    .hero {
+      min-height: 92vh; display: grid; place-items: end center; position: relative;
+      overflow: hidden; color: #fffaf0; background: var(--night);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,20,24,.12) 20%, rgba(12,20,24,.9) 92%),
+        url("day01-01-jerusalem-1917.png") center/cover no-repeat;
+      transform: scale(1.015);
+    }
+    .hero-inner {
+      width: min(1120px, calc(100% - 36px)); position: relative;
+      padding: 20vh 0 9vh; animation: arrive 900ms ease-out both;
+    }
+    .series {
+      margin: 0 0 16px; font: 700 13px/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+      letter-spacing: .16em; color: #e7c88d;
+    }
+    h1 {
+      max-width: 950px; margin: 0; font-size: clamp(42px, 7vw, 90px);
+      line-height: 1.04; letter-spacing: -.045em; text-wrap: balance;
+      text-shadow: 0 3px 28px rgba(0,0,0,.42);
+    }
+    .dek {
+      max-width: 760px; margin: 28px 0 0; font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.7; color: rgba(255,250,240,.88);
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 36px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.25); color: rgba(255,250,240,.72); font-size: 14px;
+    }
+    .layout {
+      width: min(1320px, calc(100% - 40px)); margin: 0 auto; display: grid;
+      grid-template-columns: 220px minmax(0, 760px); gap: 72px; align-items: start;
+    }
+    .article {
+      grid-column: 2; grid-row: 1; padding: 88px 0 140px;
+      counter-reset: sidenote; min-width: 0;
+    }
+    .toc {
+      grid-column: 1; grid-row: 1; position: sticky; top: 40px; margin-top: 100px;
+      padding: 22px 22px 22px 0; border-right: 1px solid var(--line);
+      font-size: 13px; line-height: 1.6; text-align: right;
+    }
+    .toc strong {
+      display: block; margin-bottom: 12px; font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      letter-spacing: .12em; color: var(--olive);
+    }
+    .toc a { display: block; margin: 8px 0; color: var(--ink-soft); text-decoration: none; }
+    .toc a:hover { color: var(--rust); }
+    .sidenote {
+      counter-increment: sidenote;
+      float: right;
+      clear: right;
+      width: 228px;
+      margin: 8px -300px 24px 34px;
+      padding: 15px 0 15px 18px;
+      border-left: 2px solid rgba(155,63,47,.42);
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.68;
+    }
+    .sidenote::before {
+      content: "注 " counter(sidenote, decimal-leading-zero);
+      display: block;
+      margin-bottom: 6px;
+      color: var(--rust);
+      font: 800 11px/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+      letter-spacing: .12em;
+    }
+    .sidenote strong { color: var(--night-2); }
+    .sidenote a { overflow-wrap: anywhere; }
+    .lead { font-size: 23px; line-height: 1.78; }
+    .lead::first-letter {
+      float: left; margin: .08em .13em 0 0; color: var(--rust); font-size: 5.1em; line-height: .78;
+    }
+    p { margin: 1.35em 0; font-size: 19px; }
+    em {
+      text-decoration: underline; text-decoration-color: rgba(155,63,47,.35);
+      text-underline-offset: .16em; font-style: normal;
+    }
+    .chapter { scroll-margin-top: 28px; margin-top: 120px; }
+    .chapter-head {
+      display: grid; grid-template-columns: 72px 1fr; gap: 18px; align-items: start; margin-bottom: 38px;
+    }
+    .chapter-no {
+      color: var(--rust); font: 700 52px/1 ui-monospace, "SFMono-Regular", Consolas, monospace;
+      letter-spacing: -.08em;
+    }
+    h2 {
+      margin: 0; font-size: clamp(32px, 5vw, 54px); line-height: 1.12;
+      letter-spacing: -.035em; text-wrap: balance;
+    }
+    h3 { margin: 2.5em 0 .8em; font-size: 25px; line-height: 1.35; color: var(--night-2); }
+    .kicker {
+      display: block; margin-bottom: 7px; color: var(--olive);
+      font: 700 12px/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+      letter-spacing: .16em; text-transform: uppercase;
+    }
+    .scene { width: 100%; margin: 62px 0; }
+    .scene img {
+      display: block; width: 100%; height: auto; border: 1px solid rgba(32,35,31,.26); box-shadow: var(--shadow);
+    }
+    figcaption {
+      max-width: 820px; margin: 14px auto 0; color: var(--ink-soft); font-size: 14px; line-height: 1.65;
+    }
+    .archive-note, .perspective, .pause, .definition {
+      margin: 45px 0; padding: 28px 30px; border: 1px solid var(--line);
+      background: rgba(251,247,237,.68); box-shadow: 0 7px 25px rgba(25,30,27,.055);
+    }
+    .archive-note { border-top: 4px solid var(--gold); }
+    .definition { border-top: 4px solid var(--olive); }
+    .pause { border-top: 4px solid var(--rust); background: rgba(155,63,47,.055); }
+    .archive-note h3, .perspective h3, .pause h3, .definition h3 { margin: 0 0 10px; font-size: 20px; }
+    .archive-note p, .perspective p, .pause p, .definition p { margin: .75em 0; font-size: 16px; line-height: 1.8; }
+    blockquote {
+      margin: 44px 0; padding: 8px 0 8px 30px; border-left: 5px solid var(--rust);
+      color: #30342f; font-size: 22px; line-height: 1.75;
+    }
+    blockquote small { display: block; margin-top: 14px; color: var(--ink-soft); font-size: 13px; }
+    .perspective {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 26px; padding: 0; overflow: hidden;
+    }
+    .perspective > div { padding: 28px 30px; }
+    .perspective > div + div { border-left: 1px solid var(--line); }
+    .perspective .israeli { background: rgba(38,74,95,.06); }
+    .perspective .palestinian { background: rgba(155,63,47,.06); }
+    .timeline { margin: 48px 0; padding: 0; list-style: none; border-left: 2px solid var(--gold); }
+    .timeline li { position: relative; padding: 0 0 27px 28px; font-size: 16px; line-height: 1.72; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px;
+      border-radius: 50%; background: var(--paper-light); border: 2px solid var(--rust);
+    }
+    .year {
+      display: inline-block; min-width: 58px; color: var(--rust);
+      font: 800 14px/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+    }
+    .ending {
+      margin-top: 120px; padding: 54px 48px; color: #f7f0df;
+      background: radial-gradient(circle at 80% 20%, rgba(195,154,82,.19), transparent 18rem), var(--night);
+      box-shadow: var(--shadow);
+    }
+    .ending h2 { color: #fffaf0; }
+    .ending p { color: rgba(255,250,240,.82); }
+    .questions { counter-reset: question; margin: 42px 0 0; padding: 0; list-style: none; }
+    .questions li {
+      counter-increment: question; position: relative; margin: 0; padding: 25px 0 25px 60px;
+      border-top: 1px solid rgba(255,255,255,.16); color: #fffaf0; font-size: 18px;
+    }
+    .questions li::before {
+      content: counter(question, decimal-leading-zero); position: absolute; left: 0; color: var(--gold);
+      font: 700 18px/1.6 ui-monospace, "SFMono-Regular", Consolas, monospace;
+    }
+    .sources { margin-top: 100px; padding-top: 45px; border-top: 1px solid var(--line); }
+    .sources h2 { font-size: 34px; }
+    .sources ol { padding-left: 1.4em; }
+    .sources li { margin: 16px 0; padding-left: 8px; color: var(--ink-soft); font-size: 15px; line-height: 1.75; }
+    .method { color: var(--ink-soft); font-size: 15px; }
+    footer { padding: 30px 20px 60px; text-align: center; color: var(--ink-soft); font-size: 13px; }
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1180px) {
+      .layout { display: block; width: min(760px, calc(100% - 34px)); }
+      .toc { display: none; }
+      .sidenote {
+        float: none; clear: none; width: auto; margin: 28px 0; padding: 18px 20px;
+        border: 1px solid var(--line); border-left: 4px solid rgba(155,63,47,.55);
+        background: rgba(251,247,237,.66); font-size: 14px;
+      }
+    }
+    @media (max-width: 640px) {
+      .hero { min-height: 84vh; }
+      .hero-inner { padding-bottom: 7vh; }
+      .article { padding-top: 58px; }
+      .lead { font-size: 20px; }
+      p { font-size: 17px; line-height: 1.9; }
+      .chapter { margin-top: 90px; }
+      .chapter-head { grid-template-columns: 48px 1fr; gap: 12px; }
+      .chapter-no { font-size: 36px; }
+      .scene { margin-top: 48px; margin-bottom: 48px; }
+      .archive-note, .perspective, .pause, .definition { padding: 22px 20px; }
+      .perspective { display: block; }
+      .perspective > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      blockquote { padding-left: 20px; font-size: 19px; }
+      .ending { margin-inline: -17px; padding: 42px 22px; }
+      .questions li { padding-left: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-inner { animation: none; }
+    }
+    @media print {
+      .progress, .toc { display: none; }
+      .hero { min-height: 60vh; break-after: page; }
+      .layout { display: block; width: 100%; }
+      .article { width: 760px; max-width: 100%; margin: auto; }
+      .scene { width: 100%; margin-left: 0; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="series">世界历史夜谈 · 第 01 夜</p>
+      <h1>一片土地，<br>两种归乡</h1>
+      <p class="dek">以色列是怎样出现的？巴勒斯坦人为什么把同一年叫作“大灾难”？这不是一场从古代连续打到今天的宗教战争，而是两个现代民族的愿望，在帝国、战争与恐惧中撞上了彼此。</p>
+      <div class="hero-meta">
+        <span>建议阅读：55—75 分钟</span>
+        <span>适合：初一以上亲子共读</span>
+        <span>时间范围：19世纪末—今天</span>
+        <span>核心能力：分清事实、记忆与立场</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main class="article">
+      <p class="lead">1947年冬天，一个十三岁的男孩站在雅法港附近的屋顶上。海风把晾晒的床单吹得鼓起来，远处传来船笛，街角的咖啡馆里有人争论联合国刚刚通过的分治方案。男孩并不知道，几个月后，他熟悉的街道会变成战场；更不知道，从那以后，同一片土地上的两个孩子，会从祖父母那里听到两个几乎相反的1948年。</p>
+
+      <p>我们给这个男孩起名叫萨米。街的另一头，还住着一个同岁的女孩，叫米里亚姆。她的父母从波兰来到这里，家里只有一只从欧洲带来的旧皮箱。萨米和米里亚姆是<em>虚构的合成人物</em>，他们不是某一份档案里的真人；但他们身边发生的事、他们可能听见的争论，都来自真实的历史环境。使用合成人物，是为了让我们进入历史，却不能把想象冒充证据。</p>
+      <aside class="sidenote"><strong>什么是“合成人物”？</strong>作者把多个真实人物可能拥有的经历组合到一个虚构角色身上。它能帮助叙事，但角色说的话不能当作历史证词。本篇凡涉及关键年份和数字，仍以档案资料为准。</aside>
+
+      <p>如果萨米问祖父：“这里是谁的家？”祖父会指着祖辈的橄榄园、清真寺和墓地。如果米里亚姆问父亲同一个问题，父亲会讲耶路撒冷、希伯来文、逾越节祷词，也会说起欧洲一次又一次驱逐犹太人的历史。两个人都不是在撒谎。真正困难的问题是：<em>当两个真实的归属感指向同一片土地，政治应当怎样安排今天活着的人？</em></p>
+
+      <div class="definition">
+        <span class="kicker">先放下一个误区</span>
+        <h3>“以色列—巴勒斯坦冲突”不等于“犹太教—伊斯兰教冲突”</h3>
+        <p>宗教提供了圣地、符号和记忆，但现代冲突的主轴是民族自决、土地、国家、移民、难民、安全与权利。巴勒斯坦人中有穆斯林也有基督徒；犹太复国主义者中既有宗教人士，也有许多世俗社会主义者。把一切说成“宗教仇恨”，会漏掉英国统治、欧洲反犹主义、民族主义和现代战争这些关键发动机。</p>
+      </div>
+
+      <section class="chapter" id="ch1">
+        <div class="chapter-head">
+          <div class="chapter-no">01</div>
+          <div><span class="kicker">地图还没有国界的时候</span><h2>一块不断换名字的十字路口</h2></div>
+        </div>
+        <p>先把镜头拉高。地中海东岸这块狭长土地，西边是海，东边是约旦河谷，北面通向叙利亚，南面连接埃及。商队、军队、朝圣者和难民都从这里经过。它面积不大，却处在亚洲、非洲和欧洲的连接处。谁控制这里，往往不仅为了这里本身，也为了道路、港口和帝国边界。</p>
+        <p>古代这里出现过以色列王国和犹大王国，也经历过亚述、巴比伦、波斯、希腊化诸王国、罗马、拜占庭、阿拉伯帝国、十字军、马穆鲁克与奥斯曼帝国的统治。犹太人与这片土地的历史、宗教和文化联系延续了数千年；即使多数犹太人散居世界各地，耶路撒冷仍在祷告与节日中占据中心位置，土地上也一直存在规模不等的犹太社群。</p>
+        <aside class="sidenote"><strong>名字会随统治者变化。</strong>“迦南”“犹太”“叙利亚巴勒斯坦”“圣地”“奥斯曼叙利亚南部”“巴勒斯坦”曾在不同时代、不同语境中使用。名称能反映权力和认同，却不能单凭一个旧名称判定现代主权。</aside>
+        <p>与此同时，几百年来生活在当地的阿拉伯语居民形成了自己的城镇、村庄、家族网络和地方认同。他们耕种、经商、纳税，也在奥斯曼帝国的行政框架中生活。到19世纪，现代“巴勒斯坦人”身份逐渐成形，但不能因为现代民族名称出现较晚，就说此前的人“不存在”。世界上许多民族国家都是近代形成的，法国人、意大利人、德国人的现代民族意识同样有形成过程。</p>
+        <p>这一区分很重要：<em>古代历史联系是真实的，但古代王国不是现代房产证；当地居民的连续生活也是真实的，但连续居住本身不能抹去另一群人的历史联系。</em>现代政治必须面对的是当时和今天的人，而不是让两千年前的军队替现代法庭判案。</p>
+
+        <figure class="scene">
+          <img src="day01-01-jerusalem-1917.png" width="2048" height="1152" alt="1917年前后的耶路撒冷历史场景插画，城市中不同社群共同穿行于市场">
+          <figcaption>场景一：1917年前后的耶路撒冷。图为 GPT Image 2 生成的历史情境插画，不是档案照片。它强调同一座城市中多种社群的共同生活；具体建筑位置经过艺术化处理。</figcaption>
+        </figure>
+
+        <h3>19世纪末：旧帝国里的新速度</h3>
+        <p>1880年代，巴勒斯坦仍属于奥斯曼帝国。火车、轮船、电报和欧洲资本正改变地中海世界。土地开始更频繁地被登记、买卖；领事馆和教会学校增多；雅法港把柑橘运往欧洲。城市在扩张，旧城墙外出现新社区。变化让一些人看到机会，也让另一些人担心失去土地和工作。</p>
+        <p>同一时期，欧洲犹太人面对另一种现代性。法国大革命以后，许多犹太人获得公民权，进入大学、报社、军队和商业社会；但反犹主义没有消失。俄国帝国发生针对犹太人的大规模暴力，法国的德雷福斯事件又表明：即使一名犹太军官完全认同自己的国家，也可能被偏见当作永远的外人。</p>
+        <p>一些犹太思想家因此提出：仅仅等待别人宽容不够，犹太人也需要像其他民族一样拥有政治上的家园。这就是现代<em>犹太复国主义（Zionism）</em>。1897年，西奥多·赫茨尔在瑞士巴塞尔主持第一次犹太复国主义者大会。运动内部并不一致：有人想立即建国，有人先建设社区；有人强调宗教，有人彻底世俗；也有不少犹太人反对复国主义，认为自己首先是德国人、英国人或社会主义国际主义者。</p>
+        <aside class="sidenote"><strong>Zion 与 Aliyah。</strong>Zion原指耶路撒冷的一座山，后来成为耶路撒冷乃至犹太家园的象征。Aliyah字面意为“上升”，现代常指犹太人移居以色列地。不同阶段的移民因此称“第一次阿利亚”“第二次阿利亚”等。</aside>
+        <p>从1880年代起，一批批犹太移民来到奥斯曼巴勒斯坦。他们购买土地、建立农庄和城镇、复兴希伯来语。土地交易通常具有合法契约，但“合法”不等于“没有伤害”：有些土地由居住在外地的大地主出售，原本在土地上耕种的阿拉伯佃农可能因此失去生计。对新移民而言，这是在荒地上建立安全家园；对被挤出的农民而言，却是有人拿着一张他没参与签署的纸，告诉他祖辈耕作的田地不再属于他。</p>
+
+        <div class="pause">
+          <span class="kicker">父子暂停一下</span>
+          <h3>契约公平，就一定代表结果公平吗？</h3>
+          <p>假设一家公司依法买下一个村庄周围的土地，而世代耕种但没有正式产权的农民必须离开。公司可以说“我付了钱”，农民可以说“你买走了我的生活”。政府应该保护哪一种权利？可以设计怎样的补偿和过渡？</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch2">
+        <div class="chapter-head">
+          <div class="chapter-no">02</div>
+          <div><span class="kicker">战争中的三套承诺</span><h2>英国把同一间屋子的钥匙，许给了不同的人</h2></div>
+        </div>
+        <p>1914年，第一次世界大战爆发。奥斯曼帝国加入德国一方，英国则想击败奥斯曼、保护通往印度的交通线和苏伊士运河。为了赢得战争，英国同时对不同对象说了不同的话。</p>
+        <p>英国官员麦克马洪与麦加谢里夫侯赛因通信，讨论阿拉伯人在反抗奥斯曼后获得独立的可能。英国与法国又秘密签订《赛克斯—皮科协定》，划分两国在中东的势力范围。1917年11月，英国外交大臣贝尔福致信罗斯柴尔德勋爵，表示支持“在巴勒斯坦为犹太人民建立一个民族家园”，同时说不得损害当地非犹太社群的公民和宗教权利。</p>
+        <aside class="sidenote"><strong>“三套承诺”并非三份内容完全相反的合同。</strong>侯赛因—麦克马洪通信的地理范围本就有歧义；《赛克斯—皮科协定》主要分配英法势力范围；《贝尔福宣言》则是英国政府政策声明。它们相互重叠、互相牵制，才形成后来争论。</aside>
+        <blockquote>
+          一封只有一百多词的信，后来像一块楔子打进历史：它承认一个散居民族的政治愿望，却把当时占人口多数的阿拉伯居民称为“非犹太社群”；它承诺保护他们的“公民和宗教权利”，却没有明确提到政治权利。
+          <small>可阅读原件：<a href="https://avalon.law.yale.edu/20th_century/balfour.asp" target="_blank" rel="noreferrer">《贝尔福宣言》英文全文</a></small>
+        </blockquote>
+        <p>为什么英国这么做？答案不是单一阴谋。英国政府中有人同情犹太复国主义，有人出于基督教文化想象，有人希望争取国际犹太舆论，有人考虑战后帝国利益。历史决策往往不是一只手推动，而是多种动机在同一扇门上用力。</p>
+        <p>1917年12月，英国军队进入耶路撒冷。战后，国际联盟把巴勒斯坦委任给英国管理，1922年的委任统治文件纳入了支持“犹太民族家园”的条款，也要求保护所有居民的权利、发展自治机构。问题是：如果犹太民族家园继续扩大，而阿拉伯多数又要求自己决定政治未来，两项任务可能彼此冲突。英国成了裁判，也同时是制定规则的人。</p>
+        <aside class="sidenote"><strong>委任统治不是普通殖民地，也不是独立国家。</strong>国际联盟名义上让“先进国家”暂时代管战败帝国领土，目标包含走向自治。但托管国掌握军队、行政和外交，居民并没有完整主权。</aside>
+        <div class="archive-note">
+          <span class="kicker">档案桌</span>
+          <h3>一个词的分量：“民族家园”</h3>
+          <p>宣言没有直接写“犹太国家”。支持者可以说它为犹太人的民族自决打开门；反对者则指出，它没有得到当地多数居民同意。后来英国官员和犹太复国主义者对这个词的终点是否必然是国家，也有不同解释。阅读政治文件时，要同时看<em>写了什么、没写什么、谁有资格签字</em>。</p>
+          <p>联合国关于巴勒斯坦问题的历史页面收录了委任统治、分治及历次战争的文件线索：<a href="https://www.un.org/unispal/history/" target="_blank" rel="noreferrer">History of the Question of Palestine</a>。</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch3">
+        <div class="chapter-head">
+          <div class="chapter-no">03</div>
+          <div><span class="kicker">1920—1939</span><h2>两套学校、两种报纸，以及越来越窄的共同街道</h2></div>
+        </div>
+        <p>英国托管时期，巴勒斯坦迅速现代化。港口扩建，道路增加，城市人口上升。犹太社群建立工会、学校、医疗体系、准政府机构和防卫组织；希伯来大学在耶路撒冷开学。特拉维夫从雅法旁边的新社区长成城市。一个尚未正式建国、却已经具备许多国家骨架的“犹太社会”逐渐形成。</p>
+        <p>阿拉伯社会也有报纸、政党、商会、学校和市政精英，却在组织、资金和国际支持上更分散。许多巴勒斯坦阿拉伯人要求建立代表多数居民的独立政府，并反对持续移民。他们看到的不是欧洲犹太人的绝境，而是自己可能在家乡变成少数的未来。</p>
+        <p>人口数字能解释紧张为何加速。英国托管初期，犹太人大约占当地人口的一成左右；到1947年，比例已超过三成。增长主要来自移民，尤其是1930年代纳粹迫害加剧之后。数字本身没有道德，但它会改变选举、土地、语言和国家归属的预期：少数群体担心永远没有安全，多数群体担心失去决定权。</p>
+        <aside class="sidenote"><strong>人口统计要看年份与边界。</strong>“约一成”“超过三成”用于呈现趋势，不是精确到个位的普查结论。奥斯曼晚期统计、英国普查与联合国估算采用的地域和分类并不完全相同。</aside>
+        <figure class="scene">
+          <img src="day01-02-jaffa-1930s.png" width="2048" height="1152" alt="1930年代雅法港附近的街道历史插画，阿拉伯居民、犹太移民与英国警察出现在同一街区">
+          <figcaption>场景二：1930年代的雅法街区。旧石屋、新式建筑、港口贸易与英国警察共同构成托管时代。图为 GPT Image 2 生成的情境插画，不代表某个具体街口或真实人物。</figcaption>
+        </figure>
+        <p>冲突并非天天发生。人们做生意、搭同一班车、在医院相遇，也有人主张合作或建立双民族国家。但暴力事件会迅速摧毁日常信任。1920年与1921年发生骚乱；1929年，围绕西墙和圣地权利的紧张演变成大规模暴力，希伯伦的犹太社群遭到杀戮，阿拉伯居民也在其他地方被杀。每一场暴力都给下一场暴力准备了“我们早就知道他们会这样”的证据。</p>
+        <aside class="sidenote"><strong>西墙为何敏感？</strong>犹太人把西墙视为第二圣殿遗址最重要的可接近祷告地点；它又紧邻穆斯林所称“尊贵禁地”的围墙。宗教空间重叠，使座椅、屏风或游行这样的细节都可能被理解为改变主权现状。</aside>
+        <p>1936年，巴勒斯坦阿拉伯人发动大罢工，随后发展为反对英国统治和犹太移民的武装起义。英国一面派重兵镇压，一面调查政治方案。1937年的皮尔委员会首次正式建议分治：既然两个民族目标难以调和，不如把土地分开。分治从此进入国际政策工具箱。</p>
+        <p>1936—1939年的阿拉伯起义遭到严厉镇压。许多领导人被捕、流亡或死亡，武装力量被削弱。就在欧洲走向第二次世界大战时，巴勒斯坦阿拉伯社会失去了不少政治和军事组织能力。1939年，英国发布白皮书，限制犹太移民和土地购买，并设想十年内建立一个由阿拉伯人与犹太人共同组成的独立国家。阿拉伯方面认为来得太迟且不够彻底；犹太复国主义者则在欧洲犹太人最需要逃生通道时，把它视为背叛。</p>
+        <div class="perspective" aria-label="两种安全感">
+          <div class="israeli">
+            <span class="kicker">犹太移民眼中的问题</span>
+            <h3>如果世界各国都可能关门，我们还能去哪里？</h3>
+            <p>欧洲反犹主义越来越危险。一个没有主权、必须等待别人签证的民族，随时可能被拒之门外。“国家”因此不只是旗帜，而是一艘不能再被别国港口赶走的船。</p>
+          </div>
+          <div class="palestinian">
+            <span class="kicker">巴勒斯坦阿拉伯人眼中的问题</span>
+            <h3>为什么欧洲犯下的罪，要由我们交出家园来补偿？</h3>
+            <p>当地人没有制造欧洲反犹主义，却发现大国正在用他们居住的土地解决欧洲问题。“安全家园”在一方耳中是避难，在另一方眼里可能是被替代。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch4">
+        <div class="chapter-head">
+          <div class="chapter-no">04</div>
+          <div><span class="kicker">1939—1947</span><h2>当欧洲的大门关闭，地中海上挤满了没有国家的人</h2></div>
+        </div>
+        <p>第二次世界大战和纳粹大屠杀改变了一切。纳粹德国及其合作者系统性杀害约六百万犹太人。欧洲许多国家的犹太社群被摧毁。战争结束时，幸存者走出集中营，却常常发现家已被占、亲人已经死亡、故乡仍有反犹暴力。</p>
+        <p>对一个初中生来说，“六百万”很容易变成没有重量的数字。可以把它换成学校：假设一所学校有一千人，那是六千所学校的全部师生。可是即使这样想象，仍不足以装下每个人的姓名、家庭和未完成的人生。</p>
+        <p>战争后，大批犹太幸存者住在欧洲难民营中，希望前往巴勒斯坦。英国仍执行移民限制，许多船只被拦截，乘客被送往塞浦路斯拘留营。美国大屠杀纪念馆的资料显示，1948年前后，数以万计的犹太难民试图绕过限制；以色列成立后，约十四万大屠杀幸存者在随后几年进入这个新国家。对他们来说，以色列的建立不是抽象民族理论，而是终于有人在边境说“你可以进来”。</p>
+        <p>但从萨米家的窗户看出去，故事完全不同。移民越多，阿拉伯居民越确信自己将失去多数地位。犹太地下组织与英国发生武装冲突，阿拉伯人与犹太人之间的袭击也持续发生。英国已经疲惫：战争掏空国力，驻军代价高昂，任何政策都同时遭到两边反对。1947年，英国把问题交给新成立的联合国。</p>
+        <div class="archive-note">
+          <span class="kicker">档案桌</span>
+          <h3>为什么大屠杀不是冲突的“最初原因”，却是决定性的加速器？</h3>
+          <p>犹太复国主义和移民在大屠杀前几十年已经出现，所以不能说以色列只是战后突然创造的；但大屠杀证明了犹太人缺乏主权保护可能产生怎样的灾难，也使建立犹太国家获得更强烈的国际支持和道德紧迫感。可参阅<a href="https://encyclopedia.ushmm.org/content/en/article/refugees?parent=en%2F4719" target="_blank" rel="noreferrer">美国大屠杀纪念馆：战后难民</a>。</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch5">
+        <div class="chapter-head">
+          <div class="chapter-no">05</div>
+          <div><span class="kicker">1947年11月29日</span><h2>一张多数人没有见过，却将决定他们命运的地图</h2></div>
+        </div>
+        <p>联合国特别委员会提出分治方案：结束英国托管，建立一个犹太国家和一个阿拉伯国家，耶路撒冷及周边实行特殊国际管理，两国组成经济联盟。1947年11月29日，联合国大会通过第181号决议。表决是33票赞成、13票反对、10票弃权。</p>
+        <aside class="sidenote"><strong>大会决议与安理会决议不同。</strong>联合国大会第181号决议提出分治建议并提供国际政治认可，但它本身没有像国内法律一样自动执行边界。落实方案仍需要当地合作、托管国撤离安排和安全力量。</aside>
+        <p>方案把大约55%的土地分给犹太国家，把约45%分给阿拉伯国家，耶路撒冷另行安排。为什么犹太国家分得相对更多，尽管犹太人口约占三分之一、私人拥有的土地比例更低？一部分原因是拟议犹太国包含人口稀少的内盖夫沙漠，也考虑未来犹太移民；但对巴勒斯坦阿拉伯人而言，这依然意味着一个外部机构把他们视为自己的国家分割，并把超过一半土地交给新国家。</p>
+        <aside class="sidenote"><strong>土地面积不等于土地价值。</strong>拟议犹太国面积较大，却包含大片干旱的内盖夫；同时也包括重要海岸、港口和农业区。只比较百分比会漏掉水源、道路、人口分布与经济能力。</aside>
+        <p>主流犹太复国主义领导层接受方案，虽然不满意边界，也有更激进组织反对。他们看到的是国际承认的国家机会。阿拉伯高级委员会和周边阿拉伯国家拒绝方案，认为它违反多数居民自决原则。双方的选择各有逻辑，也各有代价：接受不是接受所有细节，拒绝也不自动等于拒绝和平；但在现实中，分治表决后，政治争论迅速变成战争。</p>
+        <ul class="timeline">
+          <li><span class="year">1897</span>第一次犹太复国主义者大会召开。</li>
+          <li><span class="year">1917</span>《贝尔福宣言》发表；英国军队占领耶路撒冷。</li>
+          <li><span class="year">1922</span>国际联盟确认英国对巴勒斯坦的委任统治。</li>
+          <li><span class="year">1936</span>巴勒斯坦阿拉伯人大罢工及起义开始。</li>
+          <li><span class="year">1939</span>英国白皮书限制犹太移民；欧洲大战爆发。</li>
+          <li><span class="year">1947</span>联合国大会第181号决议建议分治。</li>
+          <li><span class="year">1948</span>以色列宣布建国；战争扩大；巴勒斯坦难民问题形成。</li>
+        </ul>
+        <p>请注意一个法律与现实的区别：联合国大会第181号决议是一项分治<em>建议</em>，不是一支自动执行边界的军队。英国不愿强制实施。当地已经有两个社会、多个武装组织和互不相容的目标。当英国撤离时，没有一个共同政府接过钥匙。</p>
+        <div class="pause">
+          <span class="kicker">父子暂停一下</span>
+          <h3>如果你在1947年的联合国，会投哪一票？</h3>
+          <p>你只能从三种不完美方案中选：一，分成两个国家，但边界曲折、双方都有少数族群；二，建立一个共同国家，但多数决定可能让犹太人担心再次没有安全保障；三，继续国际托管，但当地人都不愿再受外国统治。先替每个方案写出最强理由，再作选择。</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch6">
+        <div class="chapter-head">
+          <div class="chapter-no">06</div>
+          <div><span class="kicker">1947—1949</span><h2>同一场战争，独立日与“大灾难”</h2></div>
+        </div>
+        <p>分治表决后的第二天，暴力升级。最初阶段主要是托管地内部的犹太人与巴勒斯坦阿拉伯武装交战。道路被切断，车队遭伏击，城市混合社区崩解。双方都袭击过平民，报复像钟摆一样越来越重。</p>
+        <p>1948年4月，犹太地下组织伊尔贡和莱希袭击耶路撒冷附近的代尔亚辛村，造成大量村民死亡。消息和夸大的传言在阿拉伯社会引发恐慌，促使一些地方居民逃离。几天后，一支前往哈达萨医院的犹太车队遭阿拉伯武装袭击，数十名医护人员、教师和护卫死亡。把其中一件事删去，都会得到一个更容易愤怒、却更不完整的故事。</p>
+        <aside class="sidenote"><strong>代尔亚辛死亡人数为何常不同？</strong>早期宣传曾使用约250人的数字，后来的研究通常给出约100至120人。人数修订不会改变杀害平民和事件引发恐慌的性质，却说明战争中的第一批数字常被夸大或误传。</aside>
+        <p>海法、雅法、提比里亚等城市的阿拉伯居民大量离开。有人逃避战火，有人因恐惧暴行而走，有人听从地方领导暂时撤离，有人在军事行动中被驱逐。不同地点、不同时间的原因并不相同。历史学界对具体比例、命令链和预先计划程度长期争论；较可靠的做法不是用一句“他们都是自愿走的”或“所有人都按统一计划被赶走”覆盖每个村庄，而是逐地研究军令、日记、人口记录与证词。</p>
+        <aside class="sidenote"><strong>“逃离”与“驱逐”可以同时存在。</strong>一个家庭可能先因炮火离开，随后被禁止返回；另一个村庄可能收到直接驱逐命令。研究1948年难民问题时，离开的原因与不能回去的原因要分开分析。</aside>
+        <p>1948年5月14日下午，本—古里安在特拉维夫宣读《以色列国成立宣言》。宣言把犹太民族的历史联系、复国主义建设、大屠杀和联合国分治决议连在一起，承诺所有居民不分宗教、种族、性别享有完全平等的社会和政治权利，并向邻国伸出和平之手。美国很快给予事实承认，苏联随后也承认新国家。</p>
+        <p>第二天，英国托管正式结束，埃及、外约旦、叙利亚、黎巴嫩和伊拉克军队进入前托管地，战争变成国家间战争。但“阿拉伯一方”并非统一机器：各国有自己的目标，外约旦国王阿卜杜拉更关心控制拟议的阿拉伯国家领土；军队训练和指挥也不同。以色列则把多个犹太武装整合为国防军，并获得外部武器补给。</p>
+        <figure class="scene">
+          <img src="day01-03-two-journeys-1948.png" width="2048" height="1152" alt="1948年的寓意性道路场景，一边是携带钥匙离去的巴勒斯坦家庭，另一边是携带皮箱抵达的欧洲犹太难民">
+          <figcaption>场景三：两种相反的旅程。左侧的钥匙象征巴勒斯坦家庭失去的房屋，右侧的皮箱象征欧洲犹太难民离开的世界。它是 GPT Image 2 生成的寓意性历史插画，不表示两队人曾在同一条真实道路相遇。</figcaption>
+        </figure>
+        <p>1949年停战时，以色列控制约前英国托管地的77%，比联合国分治方案分配的范围更大；约旦控制约旦河西岸和东耶路撒冷，埃及控制加沙地带。分治方案设想的阿拉伯国家没有成立。</p>
+        <p>约七十万巴勒斯坦阿拉伯人在战争中逃离或被驱逐，数百个村庄被废弃或摧毁。他们中的大多数无法返回家园，成为约旦、黎巴嫩、叙利亚、加沙和西岸的难民。巴勒斯坦人把这段经历称为<em>Nakba，意为“大灾难”</em>。有人仍保存房门钥匙，不是因为那把钥匙还能开门，而是因为它把“我们曾在那里生活”变成可以握在手里的证据。</p>
+        <aside class="sidenote"><strong>难民身份为何延续到后代？</strong>联合国近东救济工程处为符合条件的巴勒斯坦难民及其后代提供教育、医疗和救济。登记资格不等于和平谈判已经决定所有人如何返回或赔偿；那仍是最终地位问题。</aside>
+        <p>与此同时，以色列犹太人把1948年记作独立战争：一个遭受长期迫害、刚经历灭绝性灾难的民族终于建立国家，并在看似力量悬殊的战争中生存下来。随后数年，大批大屠杀幸存者以及来自伊拉克、也门、摩洛哥、埃及等阿拉伯和穆斯林国家的犹太人迁入以色列。迁移原因包括迫害、战争环境、歧视、复国主义动员和各国不同政策。他们失去的家园，也成为以色列社会记忆的一部分。</p>
+        <div class="perspective" aria-label="1948年的两种命名">
+          <div class="israeli">
+            <span class="kicker">Yom Ha'atzmaut</span>
+            <h3>独立：终于能够保护自己</h3>
+            <p>核心记忆是生存、主权和归乡。大屠杀刚结束，邻国军队进入，新国家的胜利被理解为“再也不把命运交给别人”。</p>
+          </div>
+          <div class="palestinian">
+            <span class="kicker">Nakba</span>
+            <h3>大灾难：家园在地图上消失</h3>
+            <p>核心记忆是失地、流亡和无法返回。同一年不是建国，而是社会被打散，国家愿望没有实现。</p>
+          </div>
+        </div>
+        <p>这两种记忆可以同时真实，却不能自动互相抵消。理解以色列人的恐惧，不等于同意让巴勒斯坦人永久成为难民；承认巴勒斯坦人的灾难，也不等于否定犹太人的自决权或今天以色列人的家园。成熟的历史理解，不是给痛苦排座次，而是追问：怎样让一方的安全不再以另一方永远失去权利为代价？</p>
+      </section>
+
+      <section class="chapter" id="ch7">
+        <div class="chapter-head">
+          <div class="chapter-no">07</div>
+          <div><span class="kicker">1949—1993</span><h2>绿色停战线、六日战争与“土地换和平”</h2></div>
+        </div>
+        <p>1949年的停战线后来常被称为“绿线”，因为谈判地图上用绿色铅笔画出。它不是双方最终同意的永久国界，却逐渐成为讨论“两国方案”时的重要参照。绿线以内形成以色列；西岸由约旦控制，加沙由埃及管理。许多巴勒斯坦人生活在难民营中，等着一个越来越遥远的返回。</p>
+        <aside class="sidenote"><strong>“1967年边界”通常是简写。</strong>外交语境里，它多指1967年战争前的1949年停战线，并可能通过双方同意进行土地交换；它不是1949年就被各方确认为永久国界的线。</aside>
+        <p>1967年6月，以色列与埃及、约旦、叙利亚爆发六日战争。以色列迅速取胜，占领西奈半岛、加沙地带、约旦河西岸、东耶路撒冷和戈兰高地。对以色列人而言，胜利消除了迫近的军事恐惧，并重新控制犹太教最重要的圣地；对巴勒斯坦人而言，剩余家园也进入以色列军事占领，又有数十万人逃离或被迫迁移。</p>
+        <p>联合国安理会第242号决议提出后来外交的基本公式：以色列从冲突中占领的领土撤军，各国在安全和公认边界内和平生存，并公正解决难民问题。英文文本中“从领土撤出”是否意味着“从全部领土撤出”长期存在解释争议。这再次提醒我们，外交文件里少一个定冠词，也可能承载几十年争论。</p>
+        <aside class="sidenote"><strong>为什么一个“the”如此重要？</strong>英文版写的是 withdrawal from territories occupied，法文版更接近“从被占领的领土撤出”。以色列强调英文未要求撤出全部领土，阿拉伯国家强调不得靠战争取得领土。不同语言文本都具有正式地位。</aside>
+        <p>以色列开始在占领区建立定居点。支持者提出安全、历史和宗教联系；反对者认为，把本国平民迁入被占领土违反国际法、切割巴勒斯坦领土，也使未来国家越来越难建立。国际社会大多不承认以色列对东耶路撒冷的吞并，并普遍将西岸定居点视为非法；以色列政府对法律解释持不同意见。</p>
+        <aside class="sidenote"><strong>定居点不只是几栋房屋。</strong>它还涉及道路、军队保护区、市政边界、水源和通行许可。地图上一个小点，实际可能影响周围多个巴勒斯坦村庄能否连成连续生活空间。</aside>
+        <p>1973年，埃及和叙利亚发动战争试图收复失地。战争震动了以色列，也让各方认识到军事胜利不能永久解决政治问题。1978年戴维营协议之后，以色列把西奈归还埃及，埃及成为第一个与以色列签署和平条约的阿拉伯国家。这是“土地换和平”确实成功过的例子：敌人不是天生只能做敌人。</p>
+        <p>巴勒斯坦民族解放运动则由巴勒斯坦解放组织（PLO）主导。早期PLO诉诸武装斗争，也发生针对平民的恐怖袭击；以色列对巴勒斯坦组织和周边国家实施军事行动，平民同样付出代价。1987年，第一次巴勒斯坦大起义从加沙难民营开始，罢工、示威、投石与以军镇压让世界重新看见：冲突不只是以色列与阿拉伯国家，也是占领者与被占领人口之间的冲突。</p>
+      </section>
+
+      <section class="chapter" id="ch8">
+        <div class="chapter-head">
+          <div class="chapter-no">08</div>
+          <div><span class="kicker">1993—今天</span><h2>握手是真的，失败也是真的</h2></div>
+        </div>
+        <p>1993年9月，白宫草坪上，以色列总理拉宾和PLO主席阿拉法特在美国总统克林顿面前握手。奥斯陆协议让以色列与PLO相互承认，建立巴勒斯坦民族权力机构，并设想通过数年谈判解决耶路撒冷、边界、定居点、难民和安全等最终问题。</p>
+        <aside class="sidenote"><strong>PLO、法塔赫、哈马斯不是同一个组织。</strong>PLO是巴勒斯坦民族运动的伞形组织，法塔赫长期是其主导派别；哈马斯成立于1987年，是伊斯兰主义组织，不属于PLO，也不接受奥斯陆进程的基本路线。</aside>
+        <p>照片看起来像故事的结尾，其实只是最难一章的开头。协议把最棘手的问题留到以后，却没有确保“以后”一定到来。西岸被划分为不同管理区，巴勒斯坦获得有限自治，但以色列仍控制关键边界、安全和大片区域。定居点继续扩张。巴勒斯坦人感觉临时安排正在变成永久占领；以色列人则在袭击中怀疑让步是否带来安全。</p>
+        <aside class="sidenote"><strong>A、B、C区是什么？</strong>A区由巴勒斯坦权力机构负责民事与内部安全；B区由巴方负责民事、双方分担安全；面积最大的C区由以色列控制。它原本是过渡安排，却延续至今。</aside>
+        <p>1995年，一名反对和平进程的以色列极右翼犹太人刺杀拉宾。巴勒斯坦激进组织哈马斯发动自杀式袭击。2000年以后第二次大起义爆发，袭击、军事围困、定点清除和大规模伤亡摧毁了互信。以色列修建隔离墙或安全屏障：它减少了进入以色列城市的袭击，却也在许多地段深入西岸，使巴勒斯坦人的通行、工作和土地受到严重影响。同一堵墙，在两边拥有不同名字和不同记忆。</p>
+        <p>2005年，以色列从加沙撤出定居点和常驻地面部队。2006年哈马斯赢得巴勒斯坦立法选举，次年与法塔赫冲突后控制加沙。以色列与埃及加强对加沙边界的封锁，以色列称其目的是阻止武器与袭击，批评者则指出封锁让两百多万平民长期承受出行、经济和物资限制。此后，以色列与哈马斯多次战争和交火，火箭弹、空袭与地面行动不断加深恐惧。</p>
+        <aside class="sidenote"><strong>“撤出”之后为何仍争论“占领”？</strong>以色列认为2005年结束了对加沙的占领；联合国和许多国际法专家则依据以色列对领空、海域、人口登记及多数出入口的控制，仍把加沙视为被占领巴勒斯坦领土的一部分。这是法律标准之争，不只是用词习惯。</aside>
+        <p>2023年10月7日，哈马斯及其他武装人员越过边界袭击以色列南部社区和音乐节，杀害平民并掳走人质。这是以色列历史上最严重的单日袭击。以色列随后在加沙发动大规模战争，目标是摧毁哈马斯并救回人质；战争造成极其严重的巴勒斯坦平民伤亡、流离失所和基础设施毁坏，也引发关于比例原则、人道援助、战争罪指控和战后安排的全球争论。</p>
+        <p>这里最需要守住一条逻辑：<em>解释不等于辩护，谴责也不必二选一。</em>我们可以同时说，蓄意杀害和绑架平民不可接受；国家有保护公民的权利；军事行动仍受国际人道法约束；巴勒斯坦平民不应为哈马斯的罪行集体受罚；以色列平民也不应被当作政府政策的替身。道德原则如果只在对自己喜欢的一方有利时才使用，就不再是原则。</p>
+        <div class="archive-note">
+          <span class="kicker">阅读新闻的方法</span>
+          <h3>遇到伤亡数字，先问四件事</h3>
+          <p>谁统计？统计到哪一天？“死亡”“确认身份”“战斗人员”分别怎样定义？后续是否修订？战争中的数字会变化，也会被政治使用。不要因为数字可能不精确就否认苦难，也不要把未经核实的即时数字当成永远不变的定论。本篇因此不把持续变化的伤亡总数写死在正文里。</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="ch9">
+        <div class="chapter-head">
+          <div class="chapter-no">09</div>
+          <div><span class="kicker">回到最初的问题</span><h2>所以，以色列这个国家究竟是怎么来的？</h2></div>
+        </div>
+        <p>现在可以给出一个不靠口号的答案。</p>
+        <p>以色列不是1948年凭空出现的。它来自犹太人与这片土地延续数千年的历史和文化联系，来自19世纪欧洲民族主义时代形成的犹太复国主义，来自数十年移民、购地、建城和准国家机构建设，也来自欧洲反犹迫害与大屠杀制造的生存危机。英国的《贝尔福宣言》和委任统治为这一运动提供了国际政治框架，联合国分治决议给予建立犹太国家重要的国际合法性来源，1948年战争则决定了国家实际控制的边界。</p>
+        <p>但以色列的建立也不是一块无主之地等待主人回来。那里有占人口多数、拥有城镇村庄和政治愿望的巴勒斯坦阿拉伯社会。这个社会没有同意由外部大国安排分治，并在1948年战争中遭到破坏，约七十万人失去家园。巴勒斯坦国家没有按分治方案建立，难民返回、赔偿和国家地位问题一直没有解决。</p>
+        <p>因此，两句常见说法都不完整。“这只是犹太人回到自己的土地”遗漏了在那里生活的人和1948年的灾难；“这只是欧洲殖民者突然抢走巴勒斯坦”又遗漏了犹太人的古老联系、长期当地社群、合法移民与购地，以及一个遭迫害民族真实的自决愿望。历史不是在两句宣传语里选一句，而是有勇气把两句都装不下的事实留下来。</p>
+        <p>今天的核心也不是裁定谁的祖先最早到达。现代以色列人已经在那里出生数代，不可能被“送回欧洲”，何况许多人的祖辈来自中东和北非；巴勒斯坦人也不是可以从地图上擦除的人口，他们拥有民族自决、自由和安全生活的权利。任何可持续方案都必须同时容纳这两个现实。</p>
+        <blockquote>历史能解释人们为什么害怕，却不能替他们决定永远伤害谁。真正困难的和平，不要求任何一方忘记自己的故事，而要求他们承认：对方也不是自己故事里的道具。</blockquote>
+      </section>
+
+      <section class="ending" id="talk">
+        <span class="kicker">今晚的讨论，不考标准答案</span>
+        <h2>把地图收起来，先谈人</h2>
+        <p>下面六个问题可以分两轮聊。第一轮让孩子先说，家长只追问“为什么”；第二轮交换立场，各自替自己不赞同的一方说出最强理由。</p>
+        <ol class="questions">
+          <li>如果一个民族在许多国家都遭受迫害，它是否有权建立自己的国家？如果建国地点已有居民，这项权利应受什么限制？</li>
+          <li>1947年，犹太领导层接受分治、阿拉伯领导层拒绝分治。你认为双方各自最合理的理由是什么？各自最大的误判又是什么？</li>
+          <li>“合法买地”与“世代耕种”冲突时，怎样的制度才比较公平？请设计一项当时可能减少冲突的政策。</li>
+          <li>为什么1948年可以同时是“独立”与“大灾难”？承认其中一个名称，会不会必然否定另一个？</li>
+          <li>安全和自由发生冲突时，政府可以限制普通人到什么程度？什么证据能证明限制是必要而非惩罚？</li>
+          <li>如果让你写一条和平协议的第一句，你会先承认哪两个事实？为什么必须把它们写在同一句里？</li>
+        </ol>
+      </section>
+
+      <section class="sources" id="sources">
+        <span class="kicker">史料与延伸阅读</span>
+        <h2>这篇故事依据什么？</h2>
+        <p class="method">本篇把原始政治文件、联合国历史材料、以色列官方文本与大屠杀研究资料交叉使用。联合国巴勒斯坦问题页面有明确的机构立场，因此不能单独代表全部历史解释；以色列政府资料同样代表国家叙事。把不同来源并置，正是为了让读者看到“资料”与“解释资料的人”之间的距离。</p>
+        <ol>
+          <li><a href="https://www.un.org/unispal/history/" target="_blank" rel="noreferrer">联合国：巴勒斯坦问题历史</a>。包含英国托管、1947年分治、1948与1967年战争等基本时间线。</li>
+          <li><a href="https://www.un.org/unispal/history2/origins-and-evolution-of-the-palestine-problem/" target="_blank" rel="noreferrer">联合国：《巴勒斯坦问题的起源与演变》</a>。五个部分覆盖1917—2000年，适合查找文件脉络。</li>
+          <li><a href="https://avalon.law.yale.edu/20th_century/balfour.asp" target="_blank" rel="noreferrer">耶鲁法学院 Avalon Project：《贝尔福宣言》全文</a>。建议特别观察“民族家园”与“非犹太社群”的措辞。</li>
+          <li><a href="https://www.gov.il/BlobFolder/generalpage/declaration-of-establishment-state-of-israel/en/English_SiteTransfer_DOCUMENTS_ch1.pdf" target="_blank" rel="noreferrer">以色列政府：建国宣言及历史说明</a>。可直接阅读建国者如何陈述合法性、平等与和平承诺。</li>
+          <li><a href="https://encyclopedia.ushmm.org/content/en/article/refugees?parent=en%2F4719" target="_blank" rel="noreferrer">美国大屠杀纪念馆：难民</a>。解释战前、战后犹太难民为何难以找到接收国。</li>
+          <li><a href="https://encyclopedia.ushmm.org/content/en/animated-map/the-aftermath-of-the-holocaust" target="_blank" rel="noreferrer">美国大屠杀纪念馆：大屠杀之后</a>。介绍流离失所者营地、移民路线与巴勒斯坦目的地。</li>
+          <li><a href="https://www.un.org/unispal/timeline/" target="_blank" rel="noreferrer">联合国：巴勒斯坦问题事件年表</a>。适合对照年份，但不应替代更完整的历史著作。</li>
+        </ol>
+      </section>
+    </main>
+
+    <aside class="toc" aria-label="文章目录">
+      <strong>本夜路线</strong>
+      <a href="#ch1">01 一块十字路口</a>
+      <a href="#ch2">02 英国的多重承诺</a>
+      <a href="#ch3">03 托管时代</a>
+      <a href="#ch4">04 大屠杀与难民</a>
+      <a href="#ch5">05 联合国分治</a>
+      <a href="#ch6">06 1948双重记忆</a>
+      <a href="#ch7">07 1967与占领</a>
+      <a href="#ch8">08 和平为何失败</a>
+      <a href="#ch9">09 回答最初问题</a>
+      <a href="#talk">今晚讨论</a>
+      <a href="#sources">史料来源</a>
+    </aside>
+  </div>
+
+  <footer>世界历史夜谈 · 第 1 篇 · 图像为 AI 生成的历史情境插画，不作为史料照片使用</footer>
+  <script>
+    const bar = document.querySelector('.progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+    };
+    addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>

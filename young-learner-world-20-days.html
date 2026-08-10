@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>少年国际通·20天对话系列（可直接每天讨论）</title>
+  <style>
+    :root {
+      --bg-start: #f3f7ff;
+      --bg-end: #f7f2ff;
+      --panel: #ffffff;
+      --line: #d9e4ff;
+      --text: #142744;
+      --muted: #52607d;
+      --blue: #1d4ed8;
+      --green: #15803d;
+      --amber: #9a5b00;
+      --shadow: 0 14px 32px rgba(20, 39, 68, 0.12);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.85;
+      background: radial-gradient(circle at 10% 0%, #edf1ff 0, transparent 38%),
+                  linear-gradient(180deg, var(--bg-start), var(--bg-end));
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 1020px;
+      margin: 20px auto;
+      padding: 16px;
+    }
+    header {
+      border-radius: 24px;
+      padding: 28px;
+      background: linear-gradient(120deg, #1d4ed8, #2563eb 45%, #0891b2 100%);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 10px; }
+    .meta { opacity: 0.98; max-width: 900px; }
+    .toc {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+    }
+    .toc a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 9px;
+      font-size: 0.95rem;
+    }
+    .day {
+      margin-top: 20px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    h2 { margin-top: 0; font-size: 1.7rem; line-height: 1.4; }
+    h3 { margin: 10px 0; }
+    p { margin: 10px 0; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #eef2ff; color: #1f3f85; margin-right: 8px; margin-bottom: 8px; border: 1px solid #d0dcff; }
+    .story, .evidence, .logic, .debate, .dialogue {
+      padding: 12px;
+      border-left: 4px solid;
+      margin-top: 12px;
+      border-radius: 12px;
+    }
+    .story { border-left-color: #2563eb; background: #f0f7ff; }
+    .evidence { border-left-color: #15803d; background: #f1fbf0; }
+    .logic { border-left-color: #c2410c; background: #fff5ec; }
+    .debate { border-left-color: #7c3aed; background: #f5f0ff; }
+    .dialogue { border-left-color: #0f766e; background: #ecfdf8; }
+    .timeline { padding-left: 22px; }
+    .timeline li { margin: 8px 0; }
+    figure { margin: 14px 0 0; }
+    figure img { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); }
+    figcaption { margin-top: 6px; color: var(--muted); font-size: 0.93rem; }
+    .dialogue code { background: #fff; border: 1px dashed #c0cde6; padding: 2px 6px; border-radius: 6px; }
+    footer { margin: 18px 0 8px; color: var(--muted); text-align: center; }
+    @media (max-width: 740px) {
+      .wrap { padding: 8px; }
+      header { padding: 20px; }
+      h1 { font-size: 1.45rem; }
+      h2 { font-size: 1.35rem; }
+      .day { padding: 13px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>少年国际通 · 20篇连载（每日一个世界问题）</h1>
+    <div class="meta">给儿子看的国际讨论版本：每篇先讲故事，再给证据和反例，最后留 4 个讨论问题。每天 20 分钟，能聊、能问、能反驳。</div>
+    <div class="toc">
+      <a href="#day1">1 以色列：国家的诞生与边界之问</a>
+      <a href="#day2">2 朝鲜与韩国：一刀两断的同源叙事</a>
+      <a href="#day3">3 朝鲜的发展与民生抉择</a>
+      <a href="#day4">4 俄乌战争：局部战争为何是全球震荡</a>
+      <a href="#day5">5 新加坡：小国如何把“规则”变成优势</a>
+      <a href="#day6">6 柏林墙：统一前后的慢镜头</a>
+      <a href="#day7">7 欧盟：主权分享是进步还是代价</a>
+      <a href="#day8">8 古巴导弹危机：核危机中的冷静艺术</a>
+      <a href="#day9">9 印巴冲突：克什米尔问题的时间胶囊</a>
+      <a href="#day10">10 脱欧：主权表达与经济成本</a>
+      <a href="#day11">11 运河争夺：苏伊士与巴拿马背后的世界秩序</a>
+      <a href="#day12">12 南海：不可见的线与现实航行</a>
+      <a href="#day13">13 中东油气：有油不一定有未来</a>
+      <a href="#day14">14 香港与新加坡：秩序吸引力的不同路径</a>
+      <a href="#day15">15 芯片与数字主权：安静的科技竞争</a>
+      <a href="#day16">16 网络安全与舆论认知：看不见的战场</a>
+      <a href="#day17">17 气候外交：公平和代价的博弈</a>
+      <a href="#day18">18 印度洋与红海：远在海外的生活影响</a>
+      <a href="#day19">19 核问题：反核与防核的双重视角</a>
+      <a href="#day20">20 你的观察系统：把20篇变成长期能力</a>
+    </div>
+  </header>
+
+  <article class="day" id="day1">
+    <h2>第1篇 以色列：国家的诞生与边界之问</h2>
+    <div>
+      <span class="pill">民族认同</span>
+      <span class="pill">历史叙事</span>
+      <span class="pill">国际法与安全</span>
+    </div>
+    <p>开局故事：你可以把它讲成一个家庭长期漂泊后回到祖屋的故事。但现实世界里，祖屋不是只给一个家庭，而是两个都在那儿生活过的群体。问题不是“谁是对的”，而是“怎样在两种对自己都诚实的记忆中做制度安排”。这就是以色列问题最难的地方。</p>
+    <div class="story">这不是单线故事，而是三条线同时推着走：一条是民族记忆的道德要求，要求“国家生存”；一条是流离人群与土地归属的现实争夺；第三条是外部大国利益与国际规则。任何只讲其中一条的解释，都会把另一条当作“坏人”。</div>
+    <h3>时间线（先后看懂再讨论）</h3>
+    <ol class="timeline">
+      <li>民族流散创伤与复国诉求，把“家园”从文化想象变成政治目标。</li>
+      <li>殖民时代边界承诺与战争后重画，留下“谁有合法权利”的未完问题。</li>
+      <li>建国与冲突并行，难民、定居、边界安全变成长期变量。</li>
+      <li>今天的争论核心从“谁赢”转向“谁在和平方案里不倒下”。</li>
+    </ol>
+    <div class="logic">一个“可辩论公式”给你：记忆是动力，安全是硬约束，制度是结果。任何只强调“记忆”或“安全”的方案都站不住脚，因为制度不只是讲道德，也要让普通人明天有饭吃、学校开门、医院有药。孩子在讨论时，可以先判断每个观点是否兼顾三角。</div>
+    <div class="evidence">可以引出一个现实证据：当冲突升级时，最先受影响的是学生上学、医生供应、基础服务。只要把“平民可承受性”作为底线，讨论就不会完全滑向口号。</div>
+    <div class="debate">争议练习：观点 A 认为安全优先，观点 B 认为历史正义优先，观点 C 认为国际制度优先仲裁。请让儿子分别站在三方发言 30 秒，再用 1 分钟反驳。</div>
+    <div class="dialogue">父子对话模板：<code>“如果只保住安全，今天赢了；如果只谈补偿和记忆，明天还要再打。能不能先做一个‘两边都不会输得太惨’的最短协议？”</code></div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-01.svg" alt="以色列议题结构图" />
+      <figcaption>图1：以色列问题的“记忆—安全—制度”三角结构</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day2">
+    <h2>第2篇 朝鲜与韩国：同一民族为何长期对峙</h2>
+    <div>
+      <span class="pill">分裂与战争遗产</span>
+      <span class="pill">制度对比</span>
+      <span class="pill">安全困境</span>
+    </div>
+    <p>开场句很关键：他们有共同语言、共同历史，但分成两个国家。分裂并不自动意味着对立是必然，但当外部安全环境把“误解”放大时，分裂就会被不断加固。你可以让儿子把它想成“同一棵树被两边不同土壤养大”——树干近端像在同一根，但树冠早已不同。</p>
+    <div class="story">很多人把问题简化为“统一是不是可行”。更准确的问题是“两个体制如何在同一块土地上建立信任轨道”。停战并没有带来长期和平状态，而是带来可控对抗：一旦外部信号判断失真，升级会迅速发生。</div>
+    <h3>三层理解法</h3>
+    <div class="logic">
+      <p>第一层，历史分裂把政治身份切开。第二层，外部大国竞争把安全担忧变成长期。第三层，军备与经济能力差异导致互动缺乏“对称性”。这会让每一次小动作都带有“试探 + 警惕”色彩。</p>
+    </div>
+    <div class="evidence">你可以给一个对比表：交流项目能缓冲误判；制裁可抑制危险技术扩散；但过重的硬性压力可能压缩人道通道。这里不是二元问题，而是比例问题。</div>
+    <div class="debate">争辩题：<strong>你支持先推进“家庭式交流”还是“先改造安全协议”?</strong> 要求先给依据，再给代价。让孩子体会“政策没有零成本版本”。</div>
+    <div class="dialogue">日常延伸：下一次看到新闻“停火”“核武”时，试着找一句更具体的问题：“这句话会改善哪类风险：军事、经济、还是平民生活？”</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-02.svg" alt="朝韩关系结构图" />
+      <figcaption>图2：朝韩对立中的安全困境与交流缺口</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day3">
+    <h2>第3篇 朝鲜的发展路径：体制稳定与人民生活的平衡表</h2>
+    <div>
+      <span class="pill">发展选择</span>
+      <span class="pill">封闭与韧性</span>
+      <span class="pill">风险传导</span>
+    </div>
+    <p>当我们讨论朝鲜，先别急着贴标签。给孩子的解释可以是：一个国家在长期高压环境下，会把“先存活”放在第一位。这个选择可能看似稳，但会牺牲透明、创新和消费水平，形成另一个风险循环。</p>
+    <div class="story">你可以用“家庭预算”比喻：先把所有钱放在最核心防护和政治维持，教育和医疗也许有，但创新、市场化和社会反馈最先被压缩。短期看似稳定，长期可能是“隐形慢衰”。</div>
+    <h3>机制图</h3>
+    <div class="logic">外部制裁和安全压力形成约束——内部政治秩序偏向集中化——政策信息透明度下降——社会反馈慢慢滞后。这样就出现“真实情况看不见，误差被放大”的连锁。讨论重点不在“骂”，而是理解为什么这个循环难以被外部一句话打破。</div>
+    <div class="evidence">你可让儿子记录三个关键词：<strong>生存、可见性、韧性</strong>。生存解释当下稳定；可见性告诉我们为什么民生问题难被快速修复；韧性说明制度在外部压力下为什么没有崩溃。</div>
+    <div class="debate">反方演练：为什么“孤立”未必在道德上正确，却可能在现实上被当作谈判工具？然后再反驳，找到“限制”与“激励”的平衡点。</div>
+    <div class="dialogue">父子任务：用 120 字写一段“如果我在一九九年前往一个资源紧缺家庭，我会先做哪三件事”。然后对照朝鲜故事看差异。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-03.svg" alt="朝鲜发展循环图" />
+      <figcaption>图3：安全压力下的发展选择与反馈缺口</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day4">
+    <h2>第4篇 俄乌战争：一场区域冲突如何影响世界日常</h2>
+    <div>
+      <span class="pill">战争外溢</span>
+      <span class="pill">能源与粮食</span>
+      <span class="pill">制裁与反制裁</span>
+    </div>
+    <p>这不是“遥远国家的故事”。你可以先问儿子：如果你的课本突然涨价一半，你会感觉吗？这类问题非常像战争的外溢——冲突地点在一处，成本会在很多市场体现。</p>
+    <div class="story">这场战争把一个现实教给全球：地缘风险不仅让军费上升，也会改造供应链。能源、金融、农产品、制造成本与保险费率会同步抬升。看起来是“军事事件”，却在消费端变成“生活感受”。</div>
+    <h3>四步链条</h3>
+    <div class="logic">
+      <p>第一步，安全目标冲突。第二步，武器与制裁体系启动。第三步，供应链重估，企业提高库存。第四步，普通消费者和中小企业承担更高成本。这样就解释了“为什么局部冲突是全球问题”。</p>
+    </div>
+    <div class="evidence">“谁受益、谁承担”在战争中不总是直观。某些国家出口增加，另一些国家财政受压。用这个观点引导孩子识别“短期赢家”与“长期成本共担者”。</div>
+    <div class="debate">辩论句式：<strong>制裁能不能只打“行为”不打“民生”？</strong>引导他找替代工具：人道通道、财政透明、执行分层。</div>
+    <div class="dialogue">可做一题：假设你是超市老板，油价和运输涨价 20%，你会提高哪类产品价格？顺序是什么？再对照国家层面的优先级。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-04.svg" alt="俄乌战争影响链条" />
+      <figcaption>图4：战争如何从战场传导到家庭生活</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day5">
+    <h2>第5篇 新加坡：小体量也能成为大秩序样本</h2>
+    <div>
+      <span class="pill">制度执行</span>
+      <span class="pill">金融与物流</span>
+      <span class="pill">规则信誉</span>
+    </div>
+    <p>新加坡常给人“强硬行政”的印象，但它真正的力量是“高频兑现承诺”：你在系统里办事，系统在预期时间内给出结果。这种可预期性会把外部信任转成资本、人才和创新。</p>
+    <div class="story">在国际关系里，规则不是抽象词，是交易成本。政府是否一贯执行、司法是否可预期、环境是否透明，决定投资者是否愿意长期停留。新加坡用“持续稳定”赢得体量之外的溢价。</div>
+    <h3>四个支柱</h3>
+    <ul class="timeline">
+      <li>港口和航空物流连通性，降低跨境时间。</li>
+      <li>金融规则清晰，合同执行快，跨境信用高。</li>
+      <li>教育和技术人才储备，制度得以持续更新。</li>
+      <li>多边外部关系中维持低波动姿态，减少单边猜疑。</li>
+    </ul>
+    <div class="logic">这说明“国家实力”不是面积决定的。可让孩子记住一句：<strong>最贵的自然资源不是油田，而是制度信誉。</strong></div>
+    <div class="debate">讨论题：如果预算有限，你会不会优先修“桥梁与海港”，还是“法院与监管”，为什么？要求先给一个三年和十年版本。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-05.svg" alt="新加坡制度优势示意" />
+      <figcaption>图5：小国如何用法治、物流和教育形成复合优势</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day6">
+    <h2>第6篇 柏林墙：倒下之后仍要重建的不是墙，是信任</h2>
+    <div>
+      <span class="pill">统一过程</span>
+      <span class="pill">制度融合</span>
+      <span class="pill">社会心理</span>
+    </div>
+    <p>墙倒了是事件，统一是过程。很多孩子误以为“拆墙后就和平”，但制度融合需要时间、财政协调、就业转移和价值观重建。</p>
+    <div class="story">德国统一经历了“物理统一先于制度统一”，而制度统一成本巨大：薪酬差异、税收整合、基础设施升级、历史创伤修复。历史教训是，任何政治符号变化最先不是结束，而是重排规则。</div>
+    <h3>可理解的三个问题</h3>
+    <div class="logic">第一，谁来支付历史不同阶段的账？第二，教育课程和职业标准如何对齐？第三，政治记忆如何处理，而不制造永久敌意？这三问答不出，统一难以深化。</div>
+    <div class="evidence">给孩子一个“镜子问题”：他会不会把“国家统一”误以为只是边界拼接？把答案与“统一家庭系统”对比，会更容易理解迁移成本与心态成本。</div>
+    <div class="debate">建议辩题：<strong>在统一里，财政先行是否比身份先行更重要？</strong>让他写 2 分钟立场，再用 1 分钟反方论证。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-06.svg" alt="柏林墙统一后果" />
+      <figcaption>图6：墙后的统一难题：财政治理与社会记忆</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day7">
+    <h2>第7篇 欧盟：共享主权是让国家变弱还是更强？</h2>
+    <div>
+      <span class="pill">超国家治理</span>
+      <span class="pill">市场整合</span>
+      <span class="pill">民主沟通</span>
+    </div>
+    <p>欧盟不是放弃国家，而是把某些权力交给共同规则。好处是交易更顺，坏处是沟通成本上升。这个“权力交换所需”的理解，是理解当代全球治理的核心。</p>
+    <div class="story">当你和儿子玩小组游戏，规则不全一致时很容易争执。欧盟其实就是多个国家把许多共同规则写清楚，减少冲突摩擦；但同时每次改规则都要照顾不同民意，容易出现“看起来很慢”的判断。</div>
+    <h3>观察框架</h3>
+    <div class="logic">先看收益：市场大、交易快、统一标准。再看代价：主权表达要经常解释、部分政策失去自主节奏。两者不是对立，而是“交换”。</div>
+    <div class="evidence">可以让孩子练“收益与代价清单”：边境协定降低关税是收益，能源政策统一是否会拖累弱国转换速度是代价。问自己：孩子想要的不是“更大”，而是“更稳 + 更公正”。</div>
+    <div class="debate">辩论：你支持在外贸、气候、科技上先统一，还是先让各国保留完整独立？请给出可执行条件，而不是口号。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-07.svg" alt="欧盟合作模型" />
+      <figcaption>图7：主权共享中的收益—代价平衡模型</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day8">
+    <h2>第8篇 古巴导弹危机：最危险时刻如何不一头撞墙</h2>
+    <div>
+      <span class="pill">危机管理</span>
+      <span class="pill">核威慑</span>
+      <span class="pill">沟通渠道</span>
+    </div>
+    <p>这个案例最值得给初一孩子看的点是：越危险，越不能靠情绪决策。危机管理不是“认输”，而是保留降级空间，让对方知道你不是要摧毁自己。</p>
+    <div class="story">你可以给他一个核心句：在高风险局势中，“可退路”比“胜负欲”更珍贵。因为没有退路，冲突会被对方理解为存在系统性失败，双方都更容易把偶发误判推向灾难。</div>
+    <div class="logic">这件事展示三条经验：第一，公开姿态和幕后沟通要并行；第二，第三方传递通道是减压阀；第三，危机后要有可验证的执行安排，不然短期缓解会变成新波澜。</div>
+    <div class="evidence">把“核武风险”讲得清楚：它不是威慑最厉害，而是“误触发代价最重”。所以所有相关国家都在“控制最坏情景”，哪怕现实政治彼此不和。</div>
+    <div class="debate">讨论问题：为什么“强硬”与“理性退让”常常并存？让儿子举一个课堂或家庭场景类比，说明“临界状态下的底线谈判”。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-08.svg" alt="古巴导弹危机沟通结构" />
+      <figcaption>图8：核危机中的公开与秘密沟通</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day9">
+    <h2>第9篇 印巴冲突：克什米尔为何像“永远没完工的合同”</h2>
+    <div>
+      <span class="pill">遗留争端</span>
+      <span class="pill">民族宗教认同</span>
+      <span class="pill">第三国影响</span>
+    </div>
+    <p>克什米尔问题经常在新闻里被当成“反复闹事”。但它更像一份长期没处理干净的产权与身份协议。只要根本结构不改，局部和平并不等于长期和平。</p>
+    <div class="story">争端核心有两层：一层是民族与宗教身份的自我确认，另一层是地缘和军事控制。孩子可以理解为“地图是一条线，生活是无数条线”。如果政治只看到地图，就会把人当“边缘值”，问题还会反复。</div>
+    <div class="logic">讨论时引入“三问模型”：谁决定主权叙事？边境安全如何降温？平民生活保障谁买单？这三问能避免只盯着“谁输赢”。</div>
+    <div class="evidence">争议训练：同一条新闻可以从印度、巴基斯坦、当地平民三个视角读。让孩子先写三行同一句子的三种版本，感受叙事差异。</div>
+    <div class="dialogue">家庭讨论语句：<code>“我们先不管谁赢，我们先保证每周医疗、学校、饮水正常。这是冲突能被人理解的起点。”</code></div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-09.svg" alt="克什米尔争端示意" />
+      <figcaption>图9：克什米尔争议中的主权、安全、民生三角</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day10">
+    <h2>第10篇 脱欧：主权表达和经济成本如何平衡</h2>
+    <div>
+      <span class="pill">民主决策</span>
+      <span class="pill">经济一体化</span>
+      <span class="pill">治理可持续性</span>
+    </div>
+    <p>脱欧最适合教“规则转换代价”。一票通过了，但执行是十年工程。因为制度不是按口号运行，而是按合同、税制、边境、人才流动和产业生态逐条重写。</p>
+    <div class="story">你可以给儿子一个选择题：想要“自己定规矩”与“交易便捷”之间，你今天选一个，明天就要付另一个的代价。政治问题在于代价不是一次性的，而是持续复利。</div>
+    <h3>讨论框架</h3>
+    <div class="logic">理解脱欧要分三档：政治动机（主权叙事），过渡成本（企业税、海关、劳动力），长周期影响（制造业重构与供应链调整）。这三档都看得见，但不在同一天显现。</div>
+    <div class="evidence">给孩子强调“投票的正确性和决策后的能力”不是同一个问题。你可以先支持某口号，仍要在结果面前检验能力是否落地。</div>
+    <div class="debate">辩论：如果你是下一任总理，你会做“先分离再谈恢复合作”还是“先修规则、再谈退出方式”。这逼着他把理想转为步骤。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-10.svg" alt="脱欧成本收益示意" />
+      <figcaption>图10：脱欧中的短期表达、长期执行对比</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day11">
+    <h2>第11篇 运河之争：为什么苏伊士和巴拿马是“世界心跳线”</h2>
+    <div>
+      <span class="pill">全球航运</span>
+      <span class="pill">供应链韧性</span>
+      <span class="pill">战略地理</span>
+    </div>
+    <p>运河不是地理课图标记而已，它是工业时代与后工业时代同样重要的“时间换成本”装置。船只多绕一段路，意味着油耗、时间、保险都上升，最后落在消费者和企业身上。</p>
+    <div class="story">你可以让孩子在白纸上画一条最短线和绕行线，对比“时间差”。这会帮助他看到：国家安全事故、堵塞风险、治安与管理会让看似远的地理点变成本地问题。</div>
+    <div class="logic">三层指标易记：通行效率、事故恢复速度、治理稳定。任何国家都不会只靠“实力”守住航道，效率、规则和合作更关键。</div>
+    <div class="evidence">当国家修建替代通道或库存策略，通常是提高成本换稳定。稳定是低调但必要的国家能力。</div>
+    <div class="debate">讨论题：你是物流企业负责人，会更先买保险还是改仓储？给出理由和风险模型。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-11.svg" alt="运河与全球航运" />
+      <figcaption>图11：运河中断如何改变供应链成本</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day12">
+    <h2>第12篇 南海：看不见的线为何会“出现在”真实冲突里</h2>
+    <div>
+      <span class="pill">海洋法</span>
+      <span class="pill">主权边界</span>
+      <span class="pill">海上秩序</span>
+    </div>
+    <p>南海争议最难，正因为线在海上看不见。没被看见的线一旦争议化，就可能在船只行动、资源开发、执法方式上变成可见后果。</p>
+    <div class="story">你可告诉儿子一个简单逻辑：越多人对边界理解不一致，日常摩擦越容易出现。摩擦一旦被国内政治放大，再压到军方语言，局部误判会成“系统性危机”。</div>
+    <div class="logic">国家并不是先不想合作，而是先要可核验的规则。航行自由、磋商机制、热线制度、观察机制是把不确定性从“行为猜测”拉回“规则判断”。</div>
+    <div class="evidence">强调“国际法”不是理想主义口号，而是争议降级工具。孩子读到一句军事新闻时，先问：这个议题有没有可核查程序？能不能降低第一次误判？</div>
+    <div class="debate">对话练习：若你是当事国海事官员，优先修什么机制？先公开透明，还是先军事去危险化？要求说明原因和最坏后果。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-12.svg" alt="南海规则与行动示意" />
+      <figcaption>图12：不可见边界与现实行动之间的风险转换</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day13">
+    <h2>第13篇 中东油气：有油为什么还会有焦虑</h2>
+    <div>
+      <span class="pill">资源经济</span>
+      <span class="pill">财政结构</span>
+      <span class="pill">转型压力</span>
+    </div>
+    <p>“有油不等于有未来”这句话很适合初一孩子理解。资源收入像一笔大波动现金流，管理不好会形成代际风险。孩子可以把它类比成家里突然接到一笔大奖金：不懂理财容易三年后断流。</p>
+    <div class="story">中东很多国家在平衡石油收入与长期就业、教育、科技之间做尝试：国家主权财富基金、产业多元化计划、年轻人就业转型。这个过程并不线性，但方向很清楚：把短期收益转成长期能力。</div>
+    <div class="logic">你可以强调“财税-人才-产业”三轮耦合：油价上去时财政宽松，容易忽略结构调整；油价下行时，若缺人才与创新，财政和就业会承压。</div>
+    <div class="evidence">这也是“能源国际化”的另一面：技术进步与绿色转型会重塑地缘价值链。油气依旧重要，但“唯一资产”再也不够。</div>
+    <div class="debate">作业题：给一个资源型国家写“紧急 3 年”和“转型 20 年”双时间线政策，分别列出 3 项最重要指标。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-13.svg" alt="资源国转型图" />
+      <figcaption>图13：油气收入向未来能力转移的闭环</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day14">
+    <h2>第14篇 香港与新加坡：秩序吸引力的两种表达</h2>
+    <div>
+      <span class="pill">国际金融中心</span>
+      <span class="pill">规则信任</span>
+      <span class="pill">人才流动</span>
+    </div>
+    <p>香港与新加坡都常被说是“秩序型城市”，但孩子需要看到同一目标下不同路径。香港的金融和航运历史与新加坡的制度执行分别展现了“历史积累 + 治理更新”的不同组合。</p>
+    <div class="story">讨论可用“交易市场”模型：市场不会只看风景和口号，它要看可预期性。可预期意味着规则透明、执行一致、争议渠道清晰。这个核心一旦动摇，资本和人才迁移速度会明显变快。</div>
+    <div class="logic">让孩子比较“短期吸引（低税、机会多）”和“长期吸引（可预期规则）”。前者能带来潮水式增长，后者才能承托长期。这个差异也适用于很多国家和城市。</div>
+    <div class="evidence">你可以给他一个生活类比：你更愿意长期交往的是有稳定性的同伴，而不是只会在某天送礼的朋友。国家治理也是如此。</div>
+    <div class="debate">辩题：如果是你在两地选工作，你看重工资、生活、秩序哪个权重更高？让他先写比例，再解释为什么。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-14.svg" alt="港口与秩序比较" />
+      <figcaption>图14：不同路径形成的国际枢纽信誉模型</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day15">
+    <h2>第15篇 芯片竞争：为什么这场战争“安静”却决定未来</h2>
+    <div>
+      <span class="pill">科技供应链</span>
+      <span class="pill">产业安全</span>
+      <span class="pill">标准竞争</span>
+    </div>
+    <p>芯片最容易让孩子产生“很难懂”的感觉。你可以先从手机开始：没有芯片，手机不是会坏掉，而是无法被“想象出的大部分功能”驱动。可见底层技术是现代生活的公共平台。</p>
+    <div class="story">孩子会容易理解“链条脆弱性”：设计、制程、设备、材料、软件、应用每一环都可能断掉。哪怕某一环受阻，也会影响整条链路。国家在这件事上谈的是“长期主权能力”，不是一阵子炫技。</div>
+    <div class="logic">把它讲成“供应链地图”：每一个环节都可成为“卡脖子”节点。讨论时，训练他查找“最脆弱节点 + 替代时间”而不是只看“哪国更厉害”。</div>
+    <div class="evidence">对初一孩子有趣的延伸是“AI时代对芯片需求”。设备端需求上升，会让下游教育、汽车、医疗都间接受影响，理解跨行业连接很重要。</div>
+    <div class="debate">辩题：出口管制是保护？还是遏制创新？要你定一条底线并给出可检验指标，比如关键设备自给率、研发效率、人才储备。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-15.svg" alt="半导体供应链" />
+      <figcaption>图15：设计到制造到应用的关键链</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day16">
+    <h2>第16篇 网络安全与认知战：看不见的对抗为什么更常伤害年轻人</h2>
+    <div>
+      <span class="pill">媒体素养</span>
+      <span class="pill">信息真伪</span>
+      <span class="pill">认知保护</span>
+    </div>
+    <p>这个话题和你儿子的日常最贴近。社交平台上的信息不是中性传播，常被政治、商业、情绪操纵。年轻人最早受影响的不是“国家政策”，而是判断力。</p>
+    <div class="story">给他一个“五问法”：来源可信吗？是否有证据？是不是只想激怒你？是否与事实冲突？是否有时间窗口陷阱？这不是怀疑主义，而是安全能力。国家关系中的舆论战也靠这种方法扩散。</div>
+    <div class="logic">把“真假辨识”从网络层面延伸到国际层面：任何政府发布的数字、统计、图像都要问方法和来源。国家竞争越来越像一个“公共认知系统”的竞争，谁先让公众失焦，谁就占先机。</div>
+    <div class="evidence">你和儿子可以做练习：同一件事抓两种媒体版本，标出共同事实与不同措辞，再判断各自引导方向。</div>
+    <div class="debate">课堂题：在家庭中建立“消息前置检查清单”，要求他先做三分钟评估，再决定转发。讨论为何这比“都不看”更成熟。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-16.svg" alt="信息防火墙模型" />
+      <figcaption>图16：信息检验前置流程</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day17">
+    <h2>第17篇 气候外交：公平与责任为什么总是谈不完</h2>
+    <div>
+      <span class="pill">代际公平</span>
+      <span class="pill">减排协定</span>
+      <span class="pill">技术共享</span>
+    </div>
+    <p>气候议题在国际会议上最常出现“公平”一词。孩子要理解：历史排放多、当前能力强、未来增长需求大，这三类国家责任不同，不能只用一种标准。</p>
+    <div class="story">一个简单类比：一群同学在体育场清洁卫生。有人常年不做贡献却最后受污染最重，谁来负责？有人贡献大，也最有能力改善。气候谈判就是这个权责分配问题，但规模更大。</div>
+    <div class="logic">讨论模型是：减排速度、财政支持、技术转移。只推进前者会让发展中地区承压；只推进补偿会被认为推脱减排。好的方案是“阶段性目标 + 公开核算 + 透明追踪”。</div>
+    <div class="evidence">你可以给儿子画一条“今天、十年、三十年”条线：短期就业、长期韧性、下一代生活质量之间的平衡点不在同一位置，这是现实中的主要分歧来源。</div>
+    <div class="debate">辩论：如果你必须在短期和长期之间二选一，先保哪个？然后再想“有没有第三条路”。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-17.svg" alt="气候公平与合作" />
+      <figcaption>图17：气候议题中的责任分配结构</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day18">
+    <h2>第18篇 印度洋与红海：离你更近的航线安全问题</h2>
+    <div>
+      <span class="pill">物流风险</span>
+      <span class="pill">应急策略</span>
+      <span class="pill">地缘安全</span>
+    </div>
+    <p>你儿子可能觉得红海很远。你可以问他：“如果家里突然买菜每周涨价，他会不会更关心遥远港口？”这正是航线安全的直觉：地理距离不等于影响距离。</p>
+    <div class="story">当航道变得危险时，企业会增加库存和保险，家庭成本随之变高。地缘不是新闻花边，它是“风险分配机制”练习场。谁先应对，谁先保住基本秩序。</div>
+    <div class="logic">可用“单点故障模型”解释：若所有货物流依赖少数航线，冲击就会放大。多元化可以降低风险，但会增加成本，国家与企业都在做成本-韧性权衡。</div>
+    <div class="evidence">给孩子一次模拟：设定 10 天航线中断，谁受影响最先：政府、学校、企业、家庭。让他逐级画影响链。</div>
+    <div class="debate">讨论：如果你是市长，是否要要求本地企业提前建库存？代价与收益如何表达给市民？</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-18.svg" alt="航线风险与城市生活" />
+      <figcaption>图18：红海与印度洋风险对民生的传导</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day19">
+    <h2>第19篇 核问题：反核情绪与防核现实如何并行</h2>
+    <div>
+      <span class="pill">军控</span>
+      <span class="pill">危机误判</span>
+      <span class="pill">透明机制</span>
+    </div>
+    <p>你儿子可能会直接说“核武器就是反人类的，所以不能有”。这是道德判断，先对但不够。现实政治要处理的是“如何避免误触发”。这就是反核与防核都必须同时成立的原因。</p>
+    <div class="story">军控的核心不是“谁更厉害”，而是“谁更懂得减少未知”。监测机制、热线、通知规则、核查程序看起来无聊，却是防止一时冲动的关键。可以把它理解成“安全锁”。</div>
+    <div class="logic">讨论框架：第一步减少误判，第二步降低升级速度，第三步防止武器扩散。缺一会都危险。让孩子写一句“我支持消除核武，但要先做哪三件事”。</div>
+    <div class="evidence">你可提醒他：任何核安全议题都要问“可核查性”。没有核查，都是空承诺；没有沟通，都是猜疑；没有规则，都是短路。</div>
+    <div class="debate">辩论：一国如何在承认现实威慑需要的同时，坚持逐步裁军目标？</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-19.svg" alt="核风险最小化模型" />
+      <figcaption>图19：反核愿景与防核机制并行路径</figcaption>
+    </figure>
+  </article>
+
+  <article class="day" id="day20">
+    <h2>第20篇 复盘：把今天的讨论变成“长期观察系统”</h2>
+    <div>
+      <span class="pill">方法训练</span>
+      <span class="pill">证据思维</span>
+      <span class="pill">辩论修辞</span>
+    </div>
+    <p>20 天不是为了赢过考试，而是为了养成一种“看新闻不被带节奏”的能力。把你们的对话变成一套固定模板，儿子会越来越像小小研究员。</p>
+    <div class="story">固定模板如下：先说一句事件（1 句话）、再提 3 个关键主体、再给 3 个受益/受损对象、再列 1 个可验证数据点、最后写 1 个反方观点。这样能让观点更有骨架，不会只浮于情绪。</div>
+    <div class="logic">
+      <p>你可以每周用“复盘夜”检查三件事：一是是否有新证据支持观点；二是是否看见对方立场中的合理部分；三是是否把平民影响单独列出来。很多“看起来很对”的结论，会在第三点时变弱。</p>
+    </div>
+    <div class="evidence">给孩子一个 5 分钟训练：选今天最关心的一条国际新闻，先写“我的观点”，再写“我反对者会怎么说”，最后写“我愿意让步的部分”。这是最有用的认知肌肉。</div>
+    <div class="debate">长期任务：每月选一篇历史题目，按同样模板写 800 字，家里每次只拿三段讲给对方听。这样你能看见“语言组织、证据意识和同理心”是否都在长。</div>
+    <figure>
+      <img src="/Users/qirong.liu/Library/CloudStorage/OneDrive-Personal/vibe/Codex/history/world-series-images/day-20.svg" alt="观察系统流程" />
+      <figcaption>图20：从信息到结论的每日观察流程</figcaption>
+    </figure>
+  </article>
+
+  <footer>若想继续升级下一阶段，可保留此版本，再生成每篇 2000–3000 字的“进阶版”；我已把全部 20 篇改为可直接讨论和复盘的结构化正文。</footer>
+</div>
+</body>
+</html>
