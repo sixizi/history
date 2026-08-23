@@ -45,5 +45,4 @@
 - 17 day17-climate-diplomacy.html：气候外交，谁发展、谁减排、谁付钱
 - 18 day18-indian-ocean-red-sea.html：印度洋与红海，一条航线如何抵达餐桌
 - 19 day19-nuclear-deterrence.html：核威慑，靠最可怕的武器阻止战争
-- 20 day20-world-observation-system.html：怎样观察世界，给少年人的国际问题工具箱
-
+- 20 day20-world-observation-system.html：台湾问题，海峡两岸为什么走到今天（末章保留六镜观察法）

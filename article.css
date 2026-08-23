@@ -241,7 +241,7 @@ blockquote {
   font-size: 14px;
 }
 footer { padding: 25px 20px 55px; text-align: center; color: var(--ink-soft); font-size: 13px; }
-@media (max-width:1180px) {
+@media (max-width:1420px) {
   .layout { display: block; width: min(760px,calc(100% - 34px)); }
   .toc { display: none; }
   .sidenote {
@@ -269,6 +269,19 @@ footer { padding: 25px 20px 55px; text-align: center; color: var(--ink-soft); fo
   .perspective { display: block; padding: 0; }
   .perspective > div + div { border-left: 0; border-top: 1px solid var(--line); }
   .questions { margin-inline: -17px; padding: 38px 22px; }
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .pager a {
+    display: block;
+    padding: 7px 0;
+    line-height: 1.6;
+  }
+  .pager a:nth-child(1) { text-align: left; }
+  .pager a:nth-child(2) { text-align: center; }
+  .pager a:nth-child(3) { text-align: right; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
 @media print {
